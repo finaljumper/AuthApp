@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AuthApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username_and_password_should_contain_at_least_4_characters">Username and password should contain at least 4 characters</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">login</string>
+    <string name="register">register</string>
+</resources>
