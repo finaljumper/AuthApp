@@ -1,7 +1,9 @@
 package tt.authapp
 
-/**
- * Created by renai on 26.03.17.
- */
-class User {
-}
+import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
+
+open class User(
+        @PrimaryKey open var username: String = "",
+        open var password: String = ""
+) : RealmObject()

@@ -1,50 +1,61 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
     tools:context="tt.authapp.RegisterFragment">
 
-    <TextView
-        android:id="@+id/text_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:gravity="center_horizontal"
-        android:text="@string/username_and_password_should_contain_at_least_4_characters" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/username_block"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text_info"
-        android:layout_centerHorizontal="true">
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/username_field"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/text_info"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/username"/>
-    </android.support.design.widget.TextInputLayout>
+            android:layout_marginTop="120dp"
+            android:gravity="center_horizontal"
+            android:text="@string/username_and_password_should_contain_at_least_4_characters" />
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/password_block"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/username_block"
-        android:layout_centerHorizontal="true">
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/password_field"
-            android:layout_width="match_parent"
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/username_block"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:hint="@string/password"/>
-    </android.support.design.widget.TextInputLayout>
+            android:layout_below="@id/text_info"
+            android:layout_centerHorizontal="true"
+            app:errorEnabled="true">
 
-    <Button
-        android:id="@+id/register_button"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:layout_below="@id/password_block"
-        android:layout_centerHorizontal="true"/>
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/username_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/username"
+                android:inputType="text" />
+        </android.support.design.widget.TextInputLayout>
 
-</RelativeLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/password_block"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/username_block"
+            android:layout_centerHorizontal="true"
+            app:errorEnabled="true">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/password_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:inputType="textPassword" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password_block"
+            android:layout_centerHorizontal="true"
+            android:text="@string/register" />
+    </RelativeLayout>
+</ScrollView>
