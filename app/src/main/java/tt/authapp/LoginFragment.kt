@@ -54,7 +54,7 @@ class LoginFragment(var realm: Realm) : Fragment() {
                         .findFirst()
             }
             if (found != null)
-                Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Login successful.", Toast.LENGTH_SHORT).show()
             else
                 Toast.makeText(context, "Incorrect username/password", Toast.LENGTH_SHORT).show()
         }

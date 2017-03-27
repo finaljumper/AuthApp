@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.Toast
 import butterknife.bindView
 import io.realm.Realm
+import io.realm.exceptions.RealmPrimaryKeyConstraintException
 
 
 /**
@@ -77,12 +78,15 @@ class RegisterFragment(var realm: Realm) : Fragment() {
             if (usernameChecked and passwordChecked) {
                 username = usernameField.text.toString()
                 password = passwordField.text.toString()
-                Log.d("USERNAME", username)
-                Log.d("PASSWORD", password)
                 val user = User(username!!, password!!)
-                realm.executeTransaction({
-                    realm.copyToRealm(user)
-                })
+                try {
+                    realm.executeTransaction({
+                        realm.copyToRealm(user)
+                        Toast.makeText(context, "Register complete.", Toast.LENGTH_SHORT).show()
+                    })
+                } catch (e: RealmPrimaryKeyConstraintException) {
+                    Toast.makeText(context, "User already exists!", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
